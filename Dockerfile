@@ -37,3 +37,8 @@ RUN set -ex \
  && rm -rf /root/.npm \
  && rm -rf /root/.cache/bower \
  && rm -rf /tmp/*
+
+
+
+WORKDIR $ZEPPELIN_HOME
+CMD ["bin/zeppelin.sh"]
