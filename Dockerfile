@@ -38,7 +38,7 @@ RUN set -ex \
  && rm -rf /root/.cache/bower \
  && rm -rf /tmp/*
 
-
+EXPOSE 8080 4040 4041 4042 4043 4044
 
 WORKDIR $ZEPPELIN_HOME
 CMD ["bin/zeppelin.sh"]
