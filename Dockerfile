@@ -1,27 +1,6 @@
 FROM gettyimages/spark:2.2.0-hadoop-2.7
 MAINTAINER "Israel Zúñiga de la Mora https://github.com/israelzuniga/turbo-adventure"
 
-#  Hive
-ENV HIVE_VERSION=3.0.0
-ENV HIVE_HOME=/opt/apache-hive-$HIVE_VERSION-bin
-ENV HIVE_CONF_DIR=$HIVE_HOME/conf
-ENV PATH $PATH:$HIVE_HOME/bin
-RUN curl -sL \
-  "https://archive.apache.org/dist/hive/hive-$HIVE_VERSION/apache-hive-$HIVE_VERSION-bin.tar.gz" \
-    | gunzip \
-    | tar -x -C /opt/ \
-  && chown -R root:root $HIVE_HOME \
-  && mkdir -p $HIVE_HOME/hcatalog/var/log \
-  && mkdir -p $HIVE_HOME/var/log \
-  && mkdir -p /data/hive/ \
-  && mkdir -p $HIVE_CONF_DIR \
-  && chmod 777 $HIVE_HOME/hcatalog/var/log \
-  && chmod 777 $HIVE_HOME/var/log
-
-RUN ln -s $HADOOP_HOME/share/hadoop/tools/lib/aws-java-sdk-1.7.4.jar $HIVE_HOME/lib/.
-RUN ln -s $HADOOP_HOME/share/hadoop/tools/lib/hadoop-aws-2.7.3.jar $HIVE_HOME/lib/.
-
-
 
 # Zeppelin
 ENV ZEPPELIN_PORT 8080
@@ -59,17 +38,6 @@ RUN set -ex \
  && rm -rf /tmp/*
 
 EXPOSE 8080 4040 4041 4042 4043 4044
-
-# Configure
-ADD files/hive-site.xml $HIVE_CONF_DIR/
-ADD files/hive-site.xml $SPARK_CONF_DIR/
-ADD files/start.sh /
-ADD files/init.sh /
-ADD files/beeline.sh /
-
-
-ENTRYPOINT ["/beeline.sh"]
-
 
 WORKDIR $ZEPPELIN_HOME
 CMD ["bin/zeppelin.sh"]
