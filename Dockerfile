@@ -1,6 +1,15 @@
 FROM gettyimages/spark:2.2.0-hadoop-2.7
 MAINTAINER "Israel Zúñiga de la Mora https://github.com/israelzuniga/turbo-adventure"
 
+# Hive3
+ENV HIVE_HOME /usr/local/hive
+RUN set -ex \
+  curl -sL https://www-us.apache.org/dist/hive/hive-3.0.0/apache-hive-3.0.0-bin.tar.gz \
+  | gunzip \
+  | tar x -C /tmp/  \
+&& mv /tmp/apache-hive-3.0.0-bin /usr/local/hive \
+&& rm -rf /tmp/*
+
 
 
 # Zeppelin
