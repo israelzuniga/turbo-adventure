@@ -4,6 +4,8 @@ YADFZAS: Yet-Another-Dockerfile-For-Zeppelin-And-Spark
 ---
 Docker container to use an instance of Apache Zeppelin configured with Apache Spark and Apache Hadoop. Just pull and use.
 
+[DockerHub: https://hub.docker.com/r/israelzuniga/sparkdev/](https://hub.docker.com/r/israelzuniga/sparkdev/)
+
 
 Usage.
 Linux/OSX:
