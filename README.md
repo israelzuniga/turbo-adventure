@@ -10,7 +10,7 @@ Docker container to use an instance of Apache Zeppelin configured with Apache Sp
 [DockerHub: https://hub.docker.com/r/israelzuniga/sparkdev/](https://hub.docker.com/r/israelzuniga/sparkdev/)
 
 
-### Usage.
+### Usage
 Linux/OSX:
 `$   docker run -d -p 8080:8080 -p 4040:4040 --cpus=2.0 --memory=2048M -v "$PWD":/usr/zeppelin/notebook israelzuniga/sparkdev`
 
@@ -36,7 +36,7 @@ Run it:
 Docker Compose configuration to setup an instance of PostgreSQL 10 and a PgAdmin4 web interface
 
 
-### Usage:
+### Usage
 
 It's highly suggested that you change the default login values in the next files `pg.env` and `pgadmin.env`.
 
@@ -53,7 +53,7 @@ First conifguration:
 * A pop-up window will appear. For the "General" tab write a meaningful name.
 * Select "Connection" tab and only write `postgres` for hostname/address
 * Write your credentials specified in `pg.env` file
-* Someday, this will be solved or automated. [Track the issue at #1](#1)
+* Someday, this will be solved or automated. [Track the issue at issues](israelzuniga/turbo-adventure#1)
 
 
 
