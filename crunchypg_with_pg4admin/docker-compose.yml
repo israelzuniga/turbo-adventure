@@ -18,6 +18,8 @@ services:
       - "5050:5050"
     volumes:
       - pg4volume:/var/lib/pgadmin
+    depends_on:
+      - postgres
 
 networks:
   pgnetwork
