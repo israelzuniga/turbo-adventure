@@ -1,0 +1,8 @@
+PG_MODE=primary
+PG_PRIMARY_USER=postgres
+PG_PRIMARY_PASSWORD=postgres
+PG_DATABASE=postgres
+PG_USER=dbuser
+PG_PASSWORD=dbuser
+PG_ROOT_PASSWORD=pgroot
+PG_PRIMARY_PORT=5432
