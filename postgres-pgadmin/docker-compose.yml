@@ -3,8 +3,10 @@ services:
   postgres:
     image: "crunchydata:crunchy-postgres:centos7-10.5-2.1.0"
     ports:
+      - "5432:5432"
     volumes:
   pgadmin4:
     image: "crunchydata:crunchy-pgadmin4:centos7-10.5-2.1.0"
     ports:
+      - "5050:5050"
     volumes:
