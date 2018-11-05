@@ -53,7 +53,7 @@ First conifguration:
 * A pop-up window will appear. For the "General" tab write a meaningful name.
 * Select "Connection" tab and only write `postgres` for hostname/address
 * Write your credentials specified in `pg.env` file
-* Someday, this will be solved or automated. [Track the issue at issues](issues/1)
+* Someday, this will be solved or automated. [Track the issue at issues](https://github.com/israelzuniga/turbo-adventure/issues/1)
 
 
 
