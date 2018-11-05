@@ -47,7 +47,13 @@ $ cd crunchypg_with_pg4admin
 $ docker-compose up -d
 
 ```
-
+First conifguration:
+* After setup, go to http://localhost:5050/ and login with your established credentials for pgAdmin4.
+* Once logged, select "Object" menu, then hover "Create" and "Server..."
+* A pop-up window will appear. For the "General" tab write a meaningful name.
+* Select "Connection" tab and only write `postgres` for hostname/address
+* Write your credentials specified in `pg.env` file
+* Someday, this will be solved or automated. [Track the issue at #1](#1)
 
 
 
