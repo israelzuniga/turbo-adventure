@@ -1,4 +1,11 @@
 # turbo-adventure
+
+
+
+
+## Sparkdev
+Sparkdev.
+
 YADFZAS: Yet-Another-Dockerfile-For-Zeppelin-And-Spark
 
 ---
@@ -25,3 +32,25 @@ Build:
 
 Run it:
 `$ docker run --rm -it  -p 8080:8080 -p 4040:4040 -p 4141:4141 sparkdev`
+
+
+
+## PostgreSQL 10 and pgAdmin4 with Crunchy Data  
+
+
+--
+Docker Compose configuration to setup an instance of PostgreSQL 10 and a PgAdmin4 web interface
+
+
+Usage.
+Linux/OSX:
+```bash
+
+$ cd crunchypg_with_pg4admin
+$ docker-compose up -d
+
+```
+
+
+
+https://info.crunchydata.com/blog/easy-postgresql-10-and-pgadmin-4-setup-with-docker
