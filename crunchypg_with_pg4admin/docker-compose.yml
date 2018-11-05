@@ -3,6 +3,8 @@ services:
   postgres:
     image: "crunchydata/crunchy-postgres:centos7-10.5-2.1.0"
     env_file: pg-env.list
+    networks:
+      pgnetwork
     ports:
       - "5432:5432"
     volumes:
@@ -10,11 +12,15 @@ services:
   pgadmin4:
     image: "crunchydata/crunchy-pgadmin4:centos7-10.5-2.1.0"
     env_file: pgadmin-env.list
+    networks:
+      pgnetwork
     ports:
       - "5050:5050"
     volumes:
       - pg4volume:/var/lib/pgadmin
 
+networks:
+  pgnetwork
 
 volumes:
   pgvolume:
