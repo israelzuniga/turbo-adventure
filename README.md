@@ -17,7 +17,7 @@ Windows:
 `$   docker run -d -p 8888:8888 -p 4040:4040 --cpus=2.0 --memory=2048M -v "%CD%":/usr/zeppelin/notebook israelzuniga/sparkdev`
 
 
---
+---
 If you want to build it from scratch, clone this repo and then:
 
 Build:

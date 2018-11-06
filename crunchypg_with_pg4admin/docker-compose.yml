@@ -18,6 +18,7 @@ services:
       - "5050:5050"
     volumes:
       - pg4volume:/var/lib/pgadmin
+      - ./backups:/var/lib/pgadmin/storage
     depends_on:
       - postgres
 
