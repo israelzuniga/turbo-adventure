@@ -11,3 +11,5 @@ https://info.crunchydata.com/blog/easy-postgresql-10-and-pgadmin-4-setup-with-do
 
 
 ## Original script
+
+The base concept for this automation can be found at the gist: https://gist.github.com/jkatz/98dc5d614fbbfbd2b80b65a7f4561996
