@@ -3,10 +3,10 @@ MAINTAINER "Israel Zúñiga de la Mora https://github.com/israelzuniga/turbo-adv
 
 ENV APACHE_SPARK_VERSION 2.2.0
 
-USER root
 
+USER root
 # for declarativewidgets
-RUN curl -sL https://deb.nodesource.com/setup_0.12 | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get install -y nodejs npm && \
 npm install -g bower
 
@@ -17,8 +17,14 @@ ENV SPARK_HOME /usr/local/spark
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.1-src.zip
 ENV PYSPARK_PYTHON /home/main/anaconda2/envs/python3/bin/python
 
+# install git
+RUN set -ex \
+ && buildDeps=' \
+    git \
+ ' \
+ && apt-get update && apt-get install -y --no-install-recommends $buildDeps
 
-USER main
+
 
 ENV DASHBOARDS_VERSION ==0.4.1
 ENV DASHBOARDS_BUNDLERS_VERSION ==0.2.2
@@ -27,7 +33,9 @@ ENV TOREE_VERSION >=0.1.0.dev0, <=0.1.0
 
 
 # get to the latest jupyter release and necessary libraries
-RUN conda install -y jupyter seaborn futures && \
+RUN pip install jupyter seaborn futures && \
+    pip install seaborn futures && \
+    pip install futures && \
     bash -c "source activate python3 && \
         conda install seaborn"
 
