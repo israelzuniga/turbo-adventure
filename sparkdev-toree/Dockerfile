@@ -25,11 +25,6 @@ ENV PYSPARK_PYTHON /usr/bin/python
 
 
 # Toree
-ENV DASHBOARDS_VERSION 0.4.1
-ENV DASHBOARDS_BUNDLERS_VERSION 0.2.2
-
-ENV TOREE_VERSION >=0.1.0.dev0, <=0.1.0
-
 
 # get to the latest jupyter release and necessary libraries
 RUN pip install jupyter seaborn futures && \
@@ -53,7 +48,7 @@ RUN jupyter nbextension enable jupyter_dashboards --py
 RUN pip install toree
 RUN jupyter toree install --user
 
-EXPOSE 8888 4040 4041 4042 4043 4044
+EXPOSE 8888 8080 4040 4041 4042 4043 4044
 
 
 # include nice intro notebook
