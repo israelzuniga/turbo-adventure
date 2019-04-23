@@ -50,6 +50,8 @@ RUN bash -c "source activate python3 && pip install jupyter_declarativewidgets==
 RUN pip install 'toree>=0.1.0.dev0, <=0.1.0'
 RUN jupyter toree install --user
 
+EXPOSE 8080 4040 4041 4042 4043 4044
+
 
 # include nice intro notebook
 COPY index.ipynb $HOME/notebooks/
