@@ -16,3 +16,17 @@ npm install -g bower
 ENV SPARK_HOME /usr/local/spark
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.1-src.zip
 ENV PYSPARK_PYTHON /home/main/anaconda2/envs/python3/bin/python
+
+
+USER main
+
+ENV DASHBOARDS_VERSION ==0.4.1
+ENV DASHBOARDS_BUNDLERS_VERSION ==0.2.2
+
+ENV TOREE_VERSION >=0.1.0.dev0, <=0.1.0
+
+
+# get to the latest jupyter release and necessary libraries
+RUN conda install -y jupyter seaborn futures && \
+    bash -c "source activate python3 && \
+        conda install seaborn"
