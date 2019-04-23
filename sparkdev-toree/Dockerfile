@@ -5,6 +5,13 @@ ENV APACHE_SPARK_VERSION 2.2.0
 
 
 USER root
+
+
+# install git
+RUN set -ex && \ 
+    apt-get update && apt-get install -y --no-install-recommends git
+
+
 # for declarativewidgets
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - && \
     apt-get install -y nodejs npm && \
@@ -17,15 +24,7 @@ ENV SPARK_HOME /usr/local/spark
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.1-src.zip
 ENV PYSPARK_PYTHON /home/main/anaconda2/envs/python3/bin/python
 
-# install git
-RUN set -ex \
- && buildDeps=' \
-    git \
- ' \
- && apt-get update && apt-get install -y --no-install-recommends $buildDeps
-
-
-
+# Toree
 ENV DASHBOARDS_VERSION ==0.4.1
 ENV DASHBOARDS_BUNDLERS_VERSION ==0.2.2
 
