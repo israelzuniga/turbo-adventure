@@ -1,14 +1,14 @@
-FROM gettyimages/spark:2.2.0-hadoop-2.7
+FROM gettyimages/spark:2.4.1-hadoop-3.0
 MAINTAINER "Israel Zúñiga de la Mora https://github.com/israelzuniga/turbo-adventure"
 
-ENV APACHE_SPARK_VERSION 2.2.0
+ENV APACHE_SPARK_VERSION 2.4.1
 
 
 USER root
 
 
 # install git
-RUN set -ex && \ 
+RUN set -ex && \
     apt-get update && apt-get install -y --no-install-recommends git
 
 
