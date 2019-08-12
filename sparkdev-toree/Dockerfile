@@ -25,10 +25,14 @@ ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.7-src.zip
 ENV PYSPARK_PYTHON /usr/bin/python
 
 
+
 # Jupyter
 #
-RUN python3 -m pip install --no-cache-dir "jupyter==${JUPYTER_VERSION}" "tornado<6" toree; \
-    jupyter --version; \
+RUN wget https://raw.githubusercontent.com/guangie88/jupyter-pyspark-toree-docker/master/run.sh
+
+
+RUN python3 -m pip install --no-cache-dir "jupyter" "tornado<6" toree; \
+    jupyter; \
     # Set the right Python version for Spark worker under PySpark
     apt-get install -y --no-install-recommends jq; \
     PYTHON3_KERNEL_CONF="/usr/local/share/jupyter/kernels/python3/kernel.json"; \
@@ -77,7 +81,6 @@ RUN python3 -m pip install --no-cache-dir "jupyter==${JUPYTER_VERSION}" "tornado
     rm -rf /var/lib/apt/lists/*
 
 
-EXPOSE 8888 8080 4040 4041 4042 4043 4044
 
 
 # include nice intro notebook
@@ -87,5 +90,5 @@ EXPOSE 8888 8080 4040 4041 4042 4043 4044
 
 # ENV NOTEBOOKS_DIR "/notebooks/"
 
-COPY run.sh /
-CMD ["bash /run.sh"]
+EXPOSE 8888 8080 4040 4041 4042 4043 4044
+CMD ["./run.sh"]
