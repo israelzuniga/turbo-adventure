@@ -85,3 +85,6 @@ First configuration:
 * Select "Connection" tab and only write `postgres` for hostname/address
 * Write your credentials specified in `pg.env` file
 * Someday, this will be solved or automated. [Track the issue at issues](https://github.com/israelzuniga/turbo-adventure/issues/1)
+
+
+## homomorphic encryption with PySEAL for Machine Learning
