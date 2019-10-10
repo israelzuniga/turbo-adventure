@@ -88,3 +88,13 @@ First configuration:
 
 
 ## homomorphic encryption with PySEAL for Machine Learning
+
+### Description
+
+
+### Usage
+Build Docker image:
+`docker build -t seal-python -f Dockerfile .`
+
+
+Run Jupyter server with `./run-jupyter.sh`
