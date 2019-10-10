@@ -5,7 +5,7 @@ port=12345
 pushd $(dirname ${BASH_SOURCE[0]}) > /dev/null
 docker run -d \
   -p "${port}":"${port}" \
-  -v "$(pwd)/PySEAL/SEALPythonNotebooks":"/notebooks" \
+  -v "$(pwd)/SEALPythonNotebooks":"/notebooks" \
   -w "/notebooks" \
   --name pyseal-jupyter \
   seal-save \
