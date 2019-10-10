@@ -6,3 +6,5 @@ echo "pandas" >> SEALPython/requirements.txt
 echo "scikit-learn" >> SEALPython/requirements.txt
 echo "tensorflow" >> SEALPython/requirements.txt
 bash build-docker.sh
+cp -r PySEAL/SEALPythonNotebooks .
+rm -rf PySEAL
