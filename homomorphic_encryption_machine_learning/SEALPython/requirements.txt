@@ -1,6 +1,0 @@
-pybind11
-cppimport
-pandas
-scikit-learn
-tensorflow
-jupyter
